@@ -1,6 +1,6 @@
 -- MySQL dump 10.13  Distrib 8.0.36, for Win64 (x86_64)
 --
--- Host: localhost    Database: defenders
+-- Host: localhost    Database: macacos
 -- ------------------------------------------------------
 -- Server version	8.3.0
 
@@ -16,8 +16,28 @@
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
--- Dumping routines for database 'defenders'
+-- Table structure for table `telefonos`
 --
+
+DROP TABLE IF EXISTS `telefonos`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `telefonos` (
+  `numero` char(12) DEFAULT NULL,
+  `id` int NOT NULL,
+  KEY `id` (`id`),
+  CONSTRAINT `telefonos_ibfk_1` FOREIGN KEY (`id`) REFERENCES `personas` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `telefonos`
+--
+
+LOCK TABLES `telefonos` WRITE;
+/*!40000 ALTER TABLE `telefonos` DISABLE KEYS */;
+/*!40000 ALTER TABLE `telefonos` ENABLE KEYS */;
+UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
@@ -28,4 +48,4 @@
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2024-03-25 17:05:30
+-- Dump completed on 2024-03-31 13:24:12
